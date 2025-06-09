@@ -14,3 +14,12 @@
  * limitations under the License.
  */
 /// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_BACKEND_URL: string
+  readonly VITE_MAX_UPLOAD_SIZE: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}

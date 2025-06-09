@@ -55,8 +55,8 @@ export default function DemoPageWrapper() {
         title="Sorry Firefox!"
         description={
           <div>
-            This version of Firefox doesn’t support the video features we’ll
-            need to run this demo. You can either update Firefox to the latest
+            This version of Firefox doesn't support the video features we'll
+            need to run this football tracking demo. You can either update Firefox to the latest
             nightly build{' '}
             <a
               {...stylex.props(styles.link)}
@@ -76,8 +76,8 @@ export default function DemoPageWrapper() {
   if (isBrowserUnsupported) {
     return (
       <LoadingStateScreen
-        title="Uh oh, this browser isn’t supported."
-        description="This browser doesn’t support the video features we’ll need to run this demo. Try again using Chrome, Safari, or Firefox Nightly."
+        title="Uh oh, this browser isn't supported."
+        description="This browser doesn't support the video features we'll need to run this football tracking demo. Try again using Chrome, Safari, or Firefox Nightly."
         linkProps={{to: '..', label: 'Back to homepage'}}
       />
     );

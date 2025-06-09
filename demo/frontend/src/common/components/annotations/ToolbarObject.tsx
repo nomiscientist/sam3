@@ -59,7 +59,7 @@ export default function ToolbarObject({
         alignItems="center"
         isActive={isActive}
         title="New object"
-        subtitle="No object is currently selected. Click an object in the video."
+        subtitle="No player is currently selected. Click a player in the video."
         thumbnail={<ObjectPlaceholder showPlus={false} />}
         isMobile={isMobile}
         onClick={onClick}

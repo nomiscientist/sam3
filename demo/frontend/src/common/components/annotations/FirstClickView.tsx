@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ChangeVideo from '@/common/components/gallery/ChangeVideoModal';
+import ChangeVideoModal from '@/common/components/video/ChangeVideoModal';
 import useMessagesSnackbar from '@/common/components/snackbar/useDemoMessagesSnackbar';
-import {DEMO_SHORT_NAME} from '@/demo/DemoConfig';
 import {useEffect, useRef} from 'react';
 
 export default function FirstClickView() {
@@ -31,18 +30,17 @@ export default function FirstClickView() {
 
   return (
     <div className="w-full h-full flex flex-col p-8">
-      <div className="grow flex flex-col gap-6">
-        <h2 className="text-2xl">Click an object in the video to start</h2>
-        <p className="!text-gray-60">
-          You&apos;ll be able to use {DEMO_SHORT_NAME} to make fun edits to any
-          video by tracking objects and applying visual effects.
-        </p>
-        <p className="!text-gray-60">
-          To start, click any object in the video.
-        </p>
+      <div className="flex-grow flex flex-col items-center justify-center gap-6 text-center p-8">
+        <h2 className="text-2xl">Click a football player to start tracking</h2>
+        <div className="text-base text-[#65758B] max-w-md leading-relaxed">
+          Select and track football players throughout the game footage using advanced AI technology.
+        </div>
+        <div className="text-sm text-[#65758B] max-w-md">
+          To start, click any player in the video.
+        </div>
       </div>
       <div className="flex items-center">
-        <ChangeVideo />
+        <ChangeVideoModal />
       </div>
     </div>
   );

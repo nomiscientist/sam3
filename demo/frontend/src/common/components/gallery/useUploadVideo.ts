@@ -19,27 +19,22 @@ import {VideoData} from '@/demo/atoms';
 import {useState} from 'react';
 import {FileRejection, FileWithPath, useDropzone} from 'react-dropzone';
 import {graphql, useMutation} from 'react-relay';
+import {MAX_FILE_SIZE_IN_MB, MAX_VIDEO_UPLOAD_SIZE} from '@/common/hooks/useUploadVideo';
 
 const ACCEPT_VIDEOS = {
   'video/mp4': ['.mp4'],
   'video/quicktime': ['.mov'],
 };
 
-// 70 MB default max video upload size
-const MAX_FILE_SIZE_IN_MB = 70;
-const MAX_VIDEO_UPLOAD_SIZE = MAX_FILE_SIZE_IN_MB * 1024 ** 2;
-
-type Props = {
-  onUpload: (video: VideoData) => void;
-  onUploadStart?: () => void;
-  onUploadError?: (error: Error) => void;
-};
-
 export default function useUploadVideo({
   onUpload,
   onUploadStart,
   onUploadError,
-}: Props) {
+}: {
+  onUpload: (video: VideoData) => void;
+  onUploadStart?: () => void;
+  onUploadError?: (error: Error) => void;
+}) {
   const [error, setError] = useState<string | null>(null);
   const [commit, isMutationInFlight] = useMutation<useUploadVideoMutation>(
     graphql`

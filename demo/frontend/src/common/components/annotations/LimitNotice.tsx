@@ -13,18 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {InformationFilled} from '@carbon/icons-react';
 
 export default function LimitNotice() {
   return (
-    <div className="mt-6 gap-3 mx-6 flex items-center text-gray-400">
-      <div>
-        <InformationFilled size={32} />
-      </div>
-      <div className="text-sm leading-snug">
-        In this demo, you can track up to 3 objects, even though the SAM 2 model
-        does not have a limit.
-      </div>
+    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+      <p className="text-sm text-yellow-800">
+        In this demo, you can track up to 3 players simultaneously for optimal performance, 
+        even though the AI model supports tracking many more objects.
+      </p>
     </div>
   );
 }

@@ -20,20 +20,23 @@ type EffectLayers = {
   highlight: keyof Effects;
 };
 
-export const DEMO_SHORT_NAME = 'SAM 2 Demo';
-export const RESEARCH_BY_META_AI = 'By Meta FAIR';
-export const DEMO_FRIENDLY_NAME = 'Segment Anything 2 Demo';
-export const VIDEO_WATERMARK_TEXT = `Modified with ${DEMO_FRIENDLY_NAME}`;
-export const PROJECT_GITHUB_URL =
+export const DEMO_SHORT_NAME = 'AI Football Clipper';
+export const RESEARCH_BY_META_AI = 'Powered by SAM 2';
+
+export const DEMO_FRIENDLY_NAME = 'AI Football Clipper';
+export const VIDEO_WATERMARK_TEXT = `Tracked with ${DEMO_FRIENDLY_NAME}`;
+
+export const GITHUB_URL =
   'https://github.com/facebookresearch/sam2';
 export const AIDEMOS_URL = 'https://aidemos.meta.com';
 export const ABOUT_URL = 'https://ai.meta.com/sam2';
-export const EMAIL_ADDRESS = 'segment-anything@meta.com';
+
 export const BLOG_URL = 'http://ai.meta.com/blog/sam2';
 
 export const VIDEO_API_ENDPOINT = 'http://localhost:7263';
 export const INFERENCE_API_ENDPOINT = 'http://localhost:7263';
 
+// Video upload settings optimized for football clips
 export const demoObjectLimit = 3;
 
 export const DEFAULT_EFFECT_LAYERS: EffectLayers = {
@@ -41,4 +44,7 @@ export const DEFAULT_EFFECT_LAYERS: EffectLayers = {
   highlight: 'Overlay',
 };
 
-export const MAX_UPLOAD_FILE_SIZE = '70MB';
+// Get max upload size from environment variable (default 500 MB)
+const envMaxSize = import.meta.env.VITE_MAX_UPLOAD_SIZE;
+const maxSize = envMaxSize ? parseInt(envMaxSize, 10) : 500;
+export const MAX_UPLOAD_FILE_SIZE = `${maxSize}MB`;

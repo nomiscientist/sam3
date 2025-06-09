@@ -20,22 +20,23 @@ import {useAtomValue} from 'jotai';
 export default function ObjectsToolbarHeader() {
   const isStreaming = useAtomValue(isStreamingAtom);
   const streamingState = useAtomValue(streamingStateAtom);
+  const areObjectsInitialized = streamingState === 'full';
 
   return (
     <ToolbarHeaderWrapper
       title={
-        streamingState === 'full'
-          ? 'Review tracked objects'
-          : isStreaming
-            ? 'Tracking objects'
-            : 'Select objects'
+        isStreaming
+          ? 'Tracking players in progress'
+          : areObjectsInitialized
+            ? 'Review tracked players'
+            : 'Select players to track'
       }
       description={
-        streamingState === 'full'
-          ? 'Review your selected objects across the video, and continue to edit if needed. Once everything looks good, press “Next” to continue.'
-          : isStreaming
-            ? 'Watch the video closely for any places where your objects aren’t tracked correctly. You can also stop tracking to make additional edits.'
-            : 'Adjust the selection of your object, or add additional objects. Press “Track objects” to track your objects throughout the video.'
+        isStreaming
+          ? 'Football players are being tracked throughout the video...'
+          : areObjectsInitialized
+            ? 'Players have been successfully tracked. You can now review or edit the selection.'
+            : 'Adjust the selection of your players, or add additional players. Press "Track players" to track your players throughout the video.'
       }
       className="mb-8"
     />

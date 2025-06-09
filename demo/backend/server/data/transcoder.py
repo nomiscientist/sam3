@@ -74,8 +74,19 @@ def get_video_metadata(path: str) -> VideoMetadata:
             video_stream = cont.streams.video[0]
             assert video_stream.time_base is not None
 
-            # for rotation, see: https://github.com/PyAV-Org/PyAV/pull/1249
-            rotation_deg = video_stream.side_data.get("DISPLAYMATRIX", 0)
+            # Handle rotation metadata safely
+            try:
+                # Try to get rotation from side data if available
+                if hasattr(video_stream, 'side_data'):
+                    rotation_deg = video_stream.side_data.get("DISPLAYMATRIX", 0)
+                # Fallback to metadata if available
+                elif hasattr(video_stream, 'metadata'):
+                    rotation_deg = int(video_stream.metadata.get('rotate', 0))
+                else:
+                    rotation_deg = 0
+            except (AttributeError, ValueError):
+                rotation_deg = 0
+
             num_video_frames = video_stream.frames
             video_start_time = float(video_stream.start_time * video_stream.time_base)
             width, height = video_stream.width, video_stream.height

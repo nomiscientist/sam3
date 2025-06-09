@@ -44,27 +44,27 @@ export const defaultMessageMap: MessagesEventMap = {
     options: {type: 'loading', showClose: false, repeat: true, duration: 2000},
   },
   firstClick: {
-    text: 'Tip: Click on any object in the video to get started.',
+    text: 'Tip: Click on any football player in the video to get started.',
     shown: false,
     options: {expire: false, repeat: false},
   },
   pointClick: {
-    text: 'Tip: Not what you expected? Add a few more clicks until the full object you want is selected.',
+    text: 'Tip: Not what you expected? Add a few more clicks until the full player you want is selected.',
     shown: false,
     options: {expire: false, repeat: false},
   },
   addObjectClick: {
-    text: 'Tip: Add a new object by clicking on it in the video.',
+    text: 'Tip: Add a new player by clicking on them in the video.',
     shown: false,
     options: {expire: false, repeat: false},
   },
   trackAndPlayClick: {
-    text: 'Hang tight while your objects are tracked! You’ll be able to apply visual effects in the next step. Stop tracking at any point to adjust your selections if the tracking doesn’t look right.',
+    text: 'Hang tight while your players are being tracked! You can stop tracking at any point to adjust your selections if the tracking doesn\'t look right.',
     shown: false,
     options: {expire: false, repeat: false},
   },
   trackAndPlayComplete: {
-    text: 'Tip: You can fix tracking issues by going back to the frames where tracking is not quite right and adding or removing clicks.',
+    text: 'Tip: You can fix player tracking issues by going back to the frames where tracking is not quite right and adding or removing clicks.',
     shown: false,
     options: {expire: false, repeat: false},
   },
@@ -74,7 +74,7 @@ export const defaultMessageMap: MessagesEventMap = {
     options: {repeat: true},
   },
   effectsMessage: {
-    text: 'Tip: If you aren’t sure where to get started, click “Surprise Me” to apply a surprise effect to your video.',
+    text: 'Tip: Apply visual effects to highlight tracked players or create engaging football clips.',
     shown: false,
     options: {expire: false, repeat: false},
   },
